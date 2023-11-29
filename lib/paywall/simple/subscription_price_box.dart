@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_purchases_interface/in_app_purchases_interface.dart';
 import 'package:in_app_purchases_paywall_ui/locale_text.dart';
@@ -37,29 +38,27 @@ class SubscriptionPriceBox extends StatelessWidget {
                                 padding: EdgeInsets.fromLTRB(0, context.spacing.xl, 0, context.spacing.xl),
                                 child: Column(
                                   children: [
-                                    FittedBox(
-                                      child: LocaleText(
-                                        data.durationTitle,
-                                        maxLines: 2,
-                                        style: Theme.of(context).textTheme.bodyLarge,
-                                      ),
+                                    LocaleText(
+                                      data.durationTitle,
+                                      maxLines: 2,
+                                      style: Theme.of(context).textTheme.bodyLarge,
+                                      textAlign: TextAlign.center,
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(context.spacing.s),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(left: context.spacing.m, right: context.spacing.m),
-                                      child: FittedBox(
-                                        child: Text(
-                                          "${data.price}",
-                                          textAlign: TextAlign.center,
-                                          style: Theme.of(context).textTheme.bodyMedium,
-                                        ),
+                                      child: AutoSizeText(
+                                        "${data.price}",
+                                        maxLines: 1,
+                                        textAlign: TextAlign.center,
+                                        style: Theme.of(context).textTheme.bodyMedium,
                                       ),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(left: context.spacing.m, right: context.spacing.m),
-                                      child: Text(
+                                      child: LocaleText(
                                         "per ${data.durationShort.replaceAll(" ", "\u{00A0}")}",
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context).textTheme.bodyMedium,

@@ -1,4 +1,5 @@
 import 'package:auto_localization/auto_localization.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
@@ -56,9 +57,9 @@ class _LocaleTextState extends State<LocaleText> {
     builder: (context, snapshot) {
       translate();
       return Visibility(visible: context.watch<LangNotifier>().isDefault,
-      child: Text(widget.data, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines,),
+      child: AutoSizeText(widget.data, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines,),
       replacement: Visibility(visible: widget.translated != "",
-      child: Text(widget.translated, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines),
+      child: AutoSizeText(widget.translated, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines),
       replacement: LoadingAnimationWidget.staggeredDotsWave(
         color: Colors.black,
         size: 20
