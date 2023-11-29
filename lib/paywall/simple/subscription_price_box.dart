@@ -37,21 +37,34 @@ class SubscriptionPriceBox extends StatelessWidget {
                                 padding: EdgeInsets.fromLTRB(0, context.spacing.xl, 0, context.spacing.xl),
                                 child: Column(
                                   children: [
-                                    LocaleText(
-                                      data.durationTitle,
-                                      style: Theme.of(context).textTheme.bodyLarge,
+                                    FittedBox(
+                                      child: LocaleText(
+                                        data.durationTitle,
+                                        maxLines: 2,
+                                        style: Theme.of(context).textTheme.bodyLarge,
+                                      ),
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(context.spacing.s),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(left: context.spacing.m, right: context.spacing.m),
-                                      child: LocaleText(
-                                        "${data.price} /${shouldBreakText ? "\n" : " "}${data.durationShort.replaceAll(" ", "\u{00A0}")}",
+                                      child: FittedBox(
+                                        child: Text(
+                                          "${data.price}",
+                                          textAlign: TextAlign.center,
+                                          style: Theme.of(context).textTheme.bodyMedium,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: context.spacing.m, right: context.spacing.m),
+                                      child: Text(
+                                        "per ${data.durationShort.replaceAll(" ", "\u{00A0}")}",
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context).textTheme.bodyMedium,
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
