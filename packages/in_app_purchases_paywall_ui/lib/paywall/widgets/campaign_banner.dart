@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 import 'package:responsive_spacing/responsive_spacing.dart';
 
 /// Basic Banner with a theme, headline, subTitle and a subContent Widget
@@ -19,14 +20,14 @@ class CampaignBanner extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(16))),
         child: Column(
           children: [
-            Text(
+            LocaleText(
               headline,
               style: Theme.of(context).textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             // sub Title
             if (subTitle != null)
-              Text(subTitle!,
+              LocaleText(subTitle!,
                   style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center),
             // Sub Content

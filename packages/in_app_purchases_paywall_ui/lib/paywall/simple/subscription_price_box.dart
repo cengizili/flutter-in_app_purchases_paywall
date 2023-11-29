@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:in_app_purchases_interface/in_app_purchases_interface.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/inherit/subscription_callback_iw.dart';
 import 'package:responsive_spacing/responsive_spacing.dart';
 
@@ -36,7 +37,7 @@ class SubscriptionPriceBox extends StatelessWidget {
                                 padding: EdgeInsets.fromLTRB(0, context.spacing.xl, 0, context.spacing.xl),
                                 child: Column(
                                   children: [
-                                    Text(
+                                    LocaleText(
                                       data.durationTitle,
                                       style: Theme.of(context).textTheme.bodyLarge,
                                     ),
@@ -45,7 +46,7 @@ class SubscriptionPriceBox extends StatelessWidget {
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(left: context.spacing.m, right: context.spacing.m),
-                                      child: Text(
+                                      child: LocaleText(
                                         "${data.price} /${shouldBreakText ? "\n" : " "}${data.durationShort.replaceAll(" ", "\u{00A0}")}",
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context).textTheme.bodyMedium,
@@ -62,7 +63,7 @@ class SubscriptionPriceBox extends StatelessWidget {
                                         color: Theme.of(context).colorScheme.tertiary),
                                     child: Padding(
                                       padding: EdgeInsets.all(4),
-                                      child: Text(
+                                      child: LocaleText(
                                         "-${data.dealPercentage}%",
                                         style: Theme.of(context)
                                             .textTheme

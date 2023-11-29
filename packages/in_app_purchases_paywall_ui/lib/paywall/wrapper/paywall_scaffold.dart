@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 
 ///
 /// Wrap the Paywall in a Scaffold or use your own
@@ -19,7 +20,7 @@ class PaywallScaffold extends StatelessWidget {
         key: _scaffoldKey,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-          title: appBarTitle != null ? Text(appBarTitle!) : null,
+          title: appBarTitle != null ? LocaleText(appBarTitle!) : null,
           elevation: 0.0,
           actions: [],
         ),

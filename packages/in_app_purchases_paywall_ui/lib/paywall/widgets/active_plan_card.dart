@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:in_app_purchases_intl/helper/paywall_helper.dart';
 import 'package:in_app_purchases_paywall_ui/in_app_purchases_paywall_ui.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/widgets/insets/card_insets.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -41,14 +42,14 @@ class _ActivePlanGooglePlayGeneralWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(PaywallL10NHelper.of(context)
+            LocaleText(PaywallL10NHelper.of(context)
                 .manage_subscription_google_play_title),
             SizedBox(height: 12),
             ElevatedButton(
                 onPressed: () async {
                   await launchUrlString(plan.link, mode: LaunchMode.externalApplication);
                 },
-                child: Text(PaywallL10NHelper.of(context)
+                child: LocaleText(PaywallL10NHelper.of(context)
                     .manage_subscription_google_play_button))
           ],
         ),
@@ -71,14 +72,14 @@ class _ActivePlanGooglePlayWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(PaywallL10NHelper.of(context)
+            LocaleText(PaywallL10NHelper.of(context)
                 .manage_subscription_google_play_title),
             SizedBox(height: 12),
             ElevatedButton(
                 onPressed: () async {
                   await launchUrlString(plan.link, mode: LaunchMode.externalApplication);
                 },
-                child: Text(PaywallL10NHelper.of(context)
+                child: LocaleText(PaywallL10NHelper.of(context)
                     .manage_subscription_productId(plan.productId)))
           ],
         ),
@@ -101,14 +102,14 @@ class _ActivePlanAppleAppStoreGeneralWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(PaywallL10NHelper.of(context)
+            LocaleText(PaywallL10NHelper.of(context)
                 .manage_subscription_apple_appstore_title),
             SizedBox(height: 12),
             ElevatedButton(
                 onPressed: () async {
                   await launchUrlString(plan.link, mode: LaunchMode.externalApplication);
                 },
-                child: Text(PaywallL10NHelper.of(context)
+                child: LocaleText(PaywallL10NHelper.of(context)
                     .manage_subscription_apple_appstore_button))
           ],
         ),

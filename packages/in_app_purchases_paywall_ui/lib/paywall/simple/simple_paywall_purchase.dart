@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:in_app_purchases_intl/helper/paywall_helper.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/inherit/subscription_callback_iw.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/model/paywall_data.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/simple/legal_row.dart';
@@ -33,13 +34,13 @@ class SimplePaywallPurchase extends StatelessWidget {
         PageDivider2(
             first: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
               const GutterColumn(),
-              Text(
+              LocaleText(
                 paywallData.title ?? PaywallL10NHelper.of(context).app_bar_default_title,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
 
               // add SubTitle
-              if (paywallData.subTitle != null) Text(paywallData.subTitle!, style: Theme.of(context).textTheme.bodyMedium),
+              if (paywallData.subTitle != null) LocaleText(paywallData.subTitle!, style: Theme.of(context).textTheme.bodyMedium),
 
               const GutterColumn(),
 
@@ -60,7 +61,7 @@ class SimplePaywallPurchase extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextButton(
-                      child: Text(
+                      child: LocaleText(
                         paywallData.restoreText ?? PaywallL10NHelper.of(context).restore_purchase,
                       ),
                       style: Theme.of(context).textButtonTheme.style,

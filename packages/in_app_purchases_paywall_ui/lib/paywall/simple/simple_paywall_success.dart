@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:in_app_purchases_intl/helper/paywall_helper.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/model/paywall_data.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/model/active_plan.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/widgets/active_plan_card.dart';
@@ -26,7 +27,7 @@ class SimplePaywallSuccess extends StatelessWidget {
             child: Center(
               child: Padding(
                 padding: EdgeInsets.only(top: 8, bottom: 8),
-                child: Text(
+                child: LocaleText(
                   successTitle,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleLarge,
@@ -38,7 +39,7 @@ class SimplePaywallSuccess extends StatelessWidget {
           Padding(
             padding: const PageInsets.normal(),
             child: Center(
-              child: Text(
+              child: LocaleText(
                 successSubTitle,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
@@ -49,7 +50,7 @@ class SimplePaywallSuccess extends StatelessWidget {
           SizedBox(height: 24),
           Padding(
             padding: const PageInsets.normal(),
-            child: Text(
+            child: LocaleText(
               PaywallL10NHelper.of(context).manage_subscriptions_title,
               style: Theme.of(context).textTheme.titleMedium,
             ),

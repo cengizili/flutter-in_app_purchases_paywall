@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:in_app_purchases_paywall_ui/in_app_purchases_paywall_ui.dart';
+import 'package:in_app_purchases_paywall_ui/locale_text.dart';
 import 'package:responsive_spacing/responsive_spacing.dart';
 
 /// Simple bullet point widget
@@ -21,7 +22,7 @@ class SimpleBulletPoints extends StatelessWidget {
                 color: Theme.of(context).iconTheme.color,
               ),
               Padding(
-                child: Text(
+                child: LocaleText(
                   bulletPoint.text,
                   maxLines: 2,
                   style: Theme.of(context).textTheme.bodyLarge,
