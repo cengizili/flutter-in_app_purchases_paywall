@@ -13,7 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_inappwebview: ^6.0.0-beta.30
+  flutter_inappwebview: ^5.8.0
   in_app_purchases_interface: ^1.0.0
   url_launcher: ^6.1.12
   in_app_purchases_intl: ^1.0.1
