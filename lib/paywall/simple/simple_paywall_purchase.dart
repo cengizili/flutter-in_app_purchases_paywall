@@ -13,10 +13,11 @@ import 'package:responsive_spacing/widgets/page_divider.dart';
 ///ignore: must_be_immutable
 class SimplePaywallPurchase extends StatelessWidget {
   final bool isSubscriptionLoading;
-
+  final double? bulletHeight;
   const SimplePaywallPurchase({
     super.key,
     this.isSubscriptionLoading = false,
+    required this.bulletHeight
   });
 
   @override
@@ -44,7 +45,7 @@ class SimplePaywallPurchase extends StatelessWidget {
 
               const GutterColumn(),
 
-              if (paywallData.bulletPoints != null) SimpleBulletPoints(paywallData.bulletPoints!),
+              if (paywallData.bulletPoints != null) SimpleBulletPoints(paywallData.bulletPoints!, bulletHeight),
             ]),
             second: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

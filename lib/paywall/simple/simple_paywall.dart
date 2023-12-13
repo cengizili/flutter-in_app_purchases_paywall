@@ -14,6 +14,7 @@ import 'package:in_app_purchases_paywall_ui/paywall/simple/simple_paywall_succes
 ///
 /// ignore: must_be_immutable
 class SimplePaywall extends BasePaywall {
+  final double? bulletHeight;
   /// Define the Design through the Theme you apply in your
   /// root theme: ThemeData(...)
   /// Icons are colored with iconTheme: IconThemeData(color: Colors.teal)
@@ -38,6 +39,7 @@ class SimplePaywall extends BasePaywall {
     super.callbackInterface,
     super.purchaseStateStreamInterface,
     super.activePlanList,
+    this.bulletHeight
   });
 
   @override
@@ -49,6 +51,7 @@ class _SimplePaywallState extends BasePaywallState<SimplePaywall> {
   @override
   Widget buildPaywall(BuildContext context) {
     return SimplePaywallPurchase(
+      bulletHeight: widget.bulletHeight,
         isSubscriptionLoading: widget.isSubscriptionLoading);
   }
 
