@@ -35,8 +35,8 @@ class SimplePaywallPurchase extends StatelessWidget {
         PageDivider2(
             first: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
               const GutterColumn(),
-              LocaleText(
-                paywallData.title ?? PaywallL10NHelper.of(context).app_bar_default_title,
+              if (paywallData.title != null)  LocaleText(
+                paywallData.title!,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
 
