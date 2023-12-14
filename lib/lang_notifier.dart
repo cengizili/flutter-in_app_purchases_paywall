@@ -22,7 +22,7 @@ class LangNotifier extends ChangeNotifier {
     locale = await Devicelocale.currentLocale;
     await AutoLocalization.init(
       appLanguage: 'en',
-      userLanguage: lowerLocale
+      userLanguage: 'tr'
       );
     notifyListeners();
   }
