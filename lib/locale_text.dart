@@ -7,12 +7,13 @@ import 'package:provider/provider.dart';
 import 'lang_notifier.dart';
 
 class LocaleText extends StatefulWidget {
-   LocaleText(this.data, {this.style, this.maxLines, this.textAlign, this.current="", this.translated=""});
+   LocaleText(this.data, {this.style, this.maxLines, this.overflow, this.textAlign, this.current="", this.translated=""});
 
    String data;
    String translated;
    String current;
    TextStyle? style;
+   TextOverflow? overflow;
    TextAlign? textAlign;
    int? maxLines;
 
@@ -57,9 +58,9 @@ class _LocaleTextState extends State<LocaleText> {
     builder: (context, snapshot) {
       translate();
       return Visibility(visible: context.watch<LangNotifier>().isDefault,
-      child: AutoSizeText(widget.data, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines,),
+      child: Text(widget.data, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines, overflow: widget.overflow),
       replacement: Visibility(visible: widget.translated != "",
-      child: AutoSizeText(widget.translated, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines),
+      child: Text(widget.translated, style: widget.style, textAlign: widget.textAlign, maxLines: widget.maxLines, overflow: widget.overflow),
       replacement: LoadingAnimationWidget.staggeredDotsWave(
         color: Colors.black,
         size: 20
